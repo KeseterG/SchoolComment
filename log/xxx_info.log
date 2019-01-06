@@ -1,0 +1,77 @@
+[2019-01-05 20:41:12,372][Thread-4:19044][task_id:django.request][log.py:228][ERROR][Internal Server Error: /comment/]
+Traceback (most recent call last):
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Programming\Python\项目\SchoolComment\studentcomment\views.py", line 87, in edit
+    logger.DEBUG(a)
+AttributeError: 'Logger' object has no attribute 'DEBUG'
+[2019-01-05 20:43:10,253][Thread-4:13784][task_id:django.request][log.py:228][WARNING][Not Found: /tes]
+[2019-01-05 20:45:41,336][Thread-11:7020][task_id:django.request][log.py:228][ERROR][Internal Server Error: /comment/test/]
+Traceback (most recent call last):
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\utils\datastructures.py", line 77, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'b'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Programming\Python\项目\SchoolComment\studentcomment\views.py", line 171, in test
+    a=request.POST["b"]
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\utils\datastructures.py", line 79, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'b'
+[2019-01-05 20:46:04,291][Thread-14:2668][task_id:django.request][log.py:228][WARNING][Not Found: /favicon.ico]
+[2019-01-05 20:50:34,662][Thread-3:20468][task_id:django.request][log.py:228][WARNING][Not Found: /favicon.ico]
+[2019-01-05 20:53:58,643][Thread-4:20372][task_id:django.request][log.py:228][ERROR][Internal Server Error: /comment/test/]
+Traceback (most recent call last):
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 137, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view studentcomment.views.test didn't return an HttpResponse object. It returned None instead.
+[2019-01-05 20:54:57,505][Thread-5:20200][task_id:django.request][log.py:228][ERROR][Internal Server Error: /comment/]
+Traceback (most recent call last):
+  File "E:\Programming\Python\项目\SchoolComment\studentcomment\views.py", line 84, in edit
+    other_comments_set.append({"other_comment_text": request.POST.get["othercomment"+str(a)],
+TypeError: 'method' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Programming\Python\项目\SchoolComment\studentcomment\views.py", line 88, in edit
+    except MultiValueDict or MultiValueDictKeyError:
+TypeError: catching classes that do not inherit from BaseException is not allowed
+[2019-01-05 20:55:52,907][Thread-1:20012][task_id:django.request][log.py:228][ERROR][Internal Server Error: /comment/]
+Traceback (most recent call last):
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\KeseterG\AppData\Local\Programs\Python\Python36\lib\site-packages\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\Programming\Python\项目\SchoolComment\studentcomment\views.py", line 84, in edit
+    other_comments_set.append({"other_comment_text": request.POST.get["othercomment"+str(a)],
+TypeError: 'method' object is not subscriptable
+[2019-01-05 21:01:48,031][Thread-4:18632][task_id:django.request][log.py:228][WARNING][Not Found: /comment/comment/]

@@ -1,0 +1,40 @@
+<body>
+<style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /*鼠标移动到选项上修改背景颜色 */
+        li a:hover {
+            background-color: #111;
+        }
+
+
+
+</style>
+<ul id="ul1">
+    <li><a href="/">首页</a></li>
+    <li><a href="comment/">写评语</a></li>
+
+    <li style="float: right"><a href="/login/">登陆</a></li>
+    <li style="float: right;margin-top: 15px;text-decoration-color: white;color: white">{{ login_info }}</li>
+</ul>
+
+</body>
+</html>

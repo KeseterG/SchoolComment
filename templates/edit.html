@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <style type="text/css">
+        #info1 textarea{
+            height: 350px;
+            width: 700px;
+            border-radius: 5px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+           var counter={{ counter }};
+           var oBtn=document.getElementById("add");
+           var oDiv=document.getElementById("other");
+           var user_names=[];
+            {% for user in users %}
+            user_names.push("{{ user }}");
+            {% endfor %}
+
+           oBtn.onclick=function () {
+               var oNewText=document.createElement("textarea");
+               oNewText.setAttribute("name","othercomment"+counter);
+               var oNewSelect=document.createElement("select");
+               oNewSelect.setAttribute("name","select"+counter);
+               oNewSelect.setAttribute("id","select"+counter);
+               for(var i in user_names){
+                   user_option=document.createElement("option");
+                   user_option.setAttribute("value",user_names[i]);
+                   user_option.innerHTML=user_names[i];
+                   oNewSelect.appendChild(user_option);
+
+               oDiv.appendChild(oNewText);
+               oDiv.appendChild(oNewSelect);
+               oDiv.appendChild(document.createElement("br"));
+
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+{% include "head.html" %}
+<form id="info1" action="" method="post">{% csrf_token %}
+    <h1>自评：</h1>
+    <textarea name="selfcomment">{{ old_main_comment }}</textarea>
+    <h1>他评：</h1>
+    {% for entry in old_other_comments %}
+        <textarea name="othercomment{{ entry.number }}">{{ entry.text }}</textarea>
+        <select name="select{{ entry.number }}">
+            {% for user in users %}
+                {% if entry.select == user %}
+                    <option selected="selected">{{ user }}</option>
+                {% else %}
+                    <option>{{ user }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+        <br>
+    {% endfor %}
+    <div id="other"></div>
+    <input type="submit" value="提交">
+</form>
+<input id="add" type="button" value="Add more...">
+</body>
+</html>

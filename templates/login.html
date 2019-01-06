@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SchoolComment-Login</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+    <script>
+        function check() {
+            oUser=document.getElementById("username").value;
+            oPass=document.getElementById("password").value;
+            oDiv=document.getElementById("div1");
+            if(oPass==""||oPass==null||oUser==""||oUser==null){
+                alert("你必须输入用户名或密码");
+                return false;
+            }
+            else{
+                return true;
+            }
+
+        }
+    </script>
+</head>
+<body class="login_info">
+{% include "head.html" %}
+<form action="" method="post" onsubmit="return check()">{% csrf_token %}
+    <h1><strong>Login</strong></h1>
+    UserName:<input id="username" type="text" placeholder="Enter Your Username" name="Username">
+    <br>
+    <br>
+    Password:<input id="password" type="password" placeholder="Enter Your Password" name="Password">
+    <br>
+    <br>
+    <input type="submit" value="Login" id="submit_button">
+    <br>
+    {{ state }}
+</form>
+<br>
+<br>
+
+<a href="/logout">Logout</a>
+<br>
+<a href="/">Back to index</a>
+<br>
+</body>
+</html>
